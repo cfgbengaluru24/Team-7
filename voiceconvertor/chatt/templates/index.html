@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        #start-btn {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #start-btn:hover {
+            background-color: #0056b3;
+        }
+        #data-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #data-list li {
+            background: #f1f1f1;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #data-list span {
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Information Collection</h1>
+        <button id="start-btn">Start Recognition</button>
+        <div id="data">
+            <h2>Collected Data</h2>
+            <ul id="data-list">
+                <li>Name: <span id="name"></span></li>
+                <li>Phone Number: <span id="phone_number"></span></li>
+                <li>Blood Group: <span id="blood_group"></span></li>
+                <li>Age: <span id="age"></span></li>
+                <li>Gender: <span id="gender"></span></li>
+                <li>Pin Code: <span id="pincode"></span></li>
+                <li>Haemoglobin: <span id="haemoglobin"></span></li>
+                <li>Oral Health Index: <span id="oral_health_index"></span></li>
+                <li>Prescription: <span id="prescription"></span></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.getElementById('start-btn').addEventListener('click', function() {
+            fetch('/start_recognition', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => console.log(data));
+        });
+
+        setInterval(function() {
+            fetch('/get_data')
+                .then(response => response.json())
+                .then(data => {
+                    const fields = ["name", "phone_number", "blood_group", "age", "gender", "pincode", "haemoglobin", "oral_health_index", "prescription"];
+                    fields.forEach((field, index) => {
+                        document.getElementById(field).textContent = data.data[index] || "";
+                    });
+                });
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "pincode":1323,
+      "name": "John Doe",
+      "age": 30,
+      "Hemoglobinlevels":17,
+      "oralHealthIndex":2,
+      "email": "john@example.com"
+    },
+    {
+      "id": 2,
+      "pincode":1324,
+      "name": "John Doe",
+      "age": 30,
+      "Hemoglobinlevels":12,
+      "oralHealthIndex":18,
+      "email": "john@example.com"
+    },
+    {
+      "id": 3,
+      "pincode":1323,
+      "name": "John Doe",
+      "age": 30,
+      "Hemoglobinlevels":5,
+      "oralHealthIndex":8,
+      "email": "john@example.com"
+    },
+    {
+      "id": 4,
+      "pincode":1323,
+      "name": "John Doe",
+      "age": 30,
+      "Hemoglobinlevels":10,
+      "oralHealthIndex":12,
+      "email": "john@example.com"
+    },
+    {
+      "id": 5,
+      "pincode":1323,
+      "name": "John Doe",
+      "age": 30,
+      "Hemoglobinlevels":9,
+      "oralHealthIndex":7,
+      "email": "john@example.com"
+    },
+    {
+      "id": 6,
+      "pincode":1323,
+      "name": "John Doe",
+      "age": 30,
+      "Hemoglobinlevels":34,
+      "oralHealthIndex":10,
+      "email": "john@example.com"
+    },
+    {
+      "id": 7,
+      "pincode":1323,
+      "name": "John Doe",
+      "age": 30,
+      "Hemoglobinlevels":2,
+      "oralHealthIndex":20,
+      "email": "john@example.com"
+    }
+  ]
+  
